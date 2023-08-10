@@ -19,6 +19,12 @@ def heal_self():
     return healing
 
 
+def enemy_attack():
+    damage = random.randint(10, 15)
+    print("The enemy attacks and deals", damage, "damage!")
+    return damage
+
+
 def main():
     while True:
         player_hp = 100
@@ -67,8 +73,6 @@ def main():
             if heal_self_cooldown > 0:
                 heal_self_cooldown -= 1
 
-            num_iterations += 1
-
             if enemy_hp <= 0:
                 print("You defeated the enemy!")
                 break
@@ -76,6 +80,15 @@ def main():
             if player_hp <= 0:
                 print("You were defeated by the enemy!")
                 break
+
+            enemy_damage = enemy_attack()
+            player_hp = max(0, player_hp - enemy_damage)
+
+            if player_hp <= 0:
+                print("You were defeated by the enemy!")
+                break
+
+            num_iterations += 1
 
             if num_iterations % 10 == 0:
                 print("\n--- Round", num_iterations, "completed! ---")
