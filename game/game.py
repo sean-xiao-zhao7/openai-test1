@@ -20,57 +20,69 @@ def heal_self():
 
 
 def main():
-    player_hp = 100
-    enemy_hp = 100
-
-    print("Welcome to the battle!")
-
-    heavy_attack_cooldown = 0
-    heal_self_cooldown = 0
-
     while True:
-        print("\nPlayer HP:", player_hp)
-        print("Enemy HP:", enemy_hp)
+        player_hp = 100
+        enemy_hp = 100
 
-        print("Commands:")
-        print("1. Regular Attack (ra)")
-        if heavy_attack_cooldown == 0:
-            print("2. Heavy Attack (ha)")
-        if heal_self_cooldown == 0:
-            print("3. Heal Self (h)")
-        print("4. Quit (q)")
+        print("Welcome to the battle!")
 
-        user_input = input("Enter a command: ")
+        heavy_attack_cooldown = 0
+        heal_self_cooldown = 0
+        num_iterations = 0
 
-        if user_input == 'ra':
-            damage = regular_attack()
-            enemy_hp = max(0, enemy_hp - damage)
-        elif user_input == 'ha' and heavy_attack_cooldown == 0:
-            damage = heavy_attack()
-            enemy_hp = max(0, enemy_hp - damage)
-            heavy_attack_cooldown = 3
-        elif user_input == 'h' and heal_self_cooldown == 0:
-            healing = heal_self()
-            player_hp = min(100, player_hp + healing)
-            heal_self_cooldown = 5
-        elif user_input == 'q':
-            print("Quitting the battle.")
-            break
-        else:
-            print("Invalid command. Please choose a valid option.")
+        while True:
+            print("\nPlayer HP:", player_hp)
+            print("Enemy HP:", enemy_hp)
 
-        if heavy_attack_cooldown > 0:
-            heavy_attack_cooldown -= 1
+            print("Commands:")
+            print("1. Regular Attack (ra)")
+            if heavy_attack_cooldown == 0:
+                print("2. Heavy Attack (ha)")
+            if heal_self_cooldown == 0:
+                print("3. Heal Self (h)")
+            print("4. Quit (q)")
 
-        if heal_self_cooldown > 0:
-            heal_self_cooldown -= 1
+            user_input = input("Enter a command: ")
 
-        if enemy_hp <= 0:
-            print("You defeated the enemy!")
-            break
+            if user_input == 'ra':
+                damage = regular_attack()
+                enemy_hp = max(0, enemy_hp - damage)
+            elif user_input == 'ha' and heavy_attack_cooldown == 0:
+                damage = heavy_attack()
+                enemy_hp = max(0, enemy_hp - damage)
+                heavy_attack_cooldown = 3
+            elif user_input == 'h' and heal_self_cooldown == 0:
+                healing = heal_self()
+                player_hp = min(100, player_hp + healing)
+                heal_self_cooldown = 5
+            elif user_input == 'q':
+                print("Quitting the battle.")
+                break
+            else:
+                print("Invalid command. Please choose a valid option.")
 
-        if player_hp <= 0:
-            print("You were defeated by the enemy!")
+            if heavy_attack_cooldown > 0:
+                heavy_attack_cooldown -= 1
+
+            if heal_self_cooldown > 0:
+                heal_self_cooldown -= 1
+
+            num_iterations += 1
+
+            if enemy_hp <= 0:
+                print("You defeated the enemy!")
+                break
+
+            if player_hp <= 0:
+                print("You were defeated by the enemy!")
+                break
+
+            if num_iterations % 10 == 0:
+                print("\n--- Round", num_iterations, "completed! ---")
+
+        play_again = input("\nDo you want to play again? (yes/no): ")
+        if play_again.lower() != "yes":
+            print("Thanks for playing!")
             break
 
 
