@@ -8,7 +8,7 @@ completion = openai.ChatCompletion.create(
     messages=[
         {
             "role": "user",
-            "content": "Test"
+            "content": "Write me a haiku based on mountain"
         }
     ]
 )
