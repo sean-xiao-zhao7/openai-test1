@@ -3,6 +3,8 @@ import openai
 
 openai.api_key = os.getenv('a')
 
+user_input = input('Enter prompt for ChatGPT: ')
+
 completion = openai.ChatCompletion.create(
     model='gpt-3.5-turbo',
     messages=[
