@@ -12,8 +12,12 @@ while True:
         model='gpt-3.5-turbo',
         messages=[
             {
+                "role": "system",
+                "content": "You are a haiku expert."
+            },
+            {
                 "role": "user",
-                "content": "Write me a haiku based on mountain"
+                "content": "Write me a haiku based on mountain."
             }
         ],
         temperature=0.2,
