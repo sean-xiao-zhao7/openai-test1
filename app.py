@@ -3,17 +3,22 @@ import openai
 
 openai.api_key = os.getenv('a')
 
+messages_log = []
+
 user_input = input('Enter prompt for ChatGPT: ')
 
-completion = openai.ChatCompletion.create(
-    model='gpt-3.5-turbo',
-    messages=[
-        {
-            "role": "user",
-            "content": "Write me a haiku based on mountain"
-        }
-    ],
-    temperature=0.2,    
-)
+while True:
+    completion = openai.ChatCompletion.create(
+        model='gpt-3.5-turbo',
+        messages=[
+            {
+                "role": "user",
+                "content": "Write me a haiku based on mountain"
+            }
+        ],
+        temperature=0.2,
+    )
 
-print(completion.choices[0].message)
+    content = completion.choices[0].message.content
+    print(content)
+    messages_log.append(content)
