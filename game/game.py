@@ -1,16 +1,22 @@
+import random
+
+
 def regular_attack():
-    print("You perform a regular attack!")
-    return 10
+    damage = random.randint(8, 12)
+    print("You perform a regular attack and deal", damage, "damage!")
+    return damage
 
 
 def heavy_attack():
-    print("You unleash a heavy attack!")
-    return 20
+    damage = random.randint(16, 24)
+    print("You unleash a heavy attack and deal", damage, "damage!")
+    return damage
 
 
 def heal_self():
-    print("You heal yourself!")
-    return -15
+    healing = random.randint(10, 20)
+    print("You heal yourself for", healing, "HP!")
+    return healing
 
 
 def main():
@@ -33,13 +39,13 @@ def main():
 
         if user_input == 'ra':
             damage = regular_attack()
-            enemy_hp -= damage
+            enemy_hp = max(0, enemy_hp - damage)
         elif user_input == 'ha':
             damage = heavy_attack()
-            enemy_hp -= damage
+            enemy_hp = max(0, enemy_hp - damage)
         elif user_input == 'h':
             healing = heal_self()
-            player_hp = min(100, player_hp - healing)
+            player_hp = min(100, player_hp + healing)
         elif user_input == 'q':
             print("Quitting the battle.")
             break
