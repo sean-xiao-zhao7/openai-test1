@@ -1,19 +1,28 @@
 def regular_attack():
     print("You perform a regular attack!")
+    return 10
 
 
 def heavy_attack():
     print("You unleash a heavy attack!")
+    return 20
 
 
 def heal_self():
     print("You heal yourself!")
+    return -15
 
 
 def main():
+    player_hp = 100
+    enemy_hp = 100
+
     print("Welcome to the battle!")
 
     while True:
+        print("\nPlayer HP:", player_hp)
+        print("Enemy HP:", enemy_hp)
+
         print("Commands:")
         print("1. Regular Attack (ra)")
         print("2. Heavy Attack (ha)")
@@ -23,16 +32,27 @@ def main():
         user_input = input("Enter a command: ")
 
         if user_input == 'ra':
-            regular_attack()
+            damage = regular_attack()
+            enemy_hp -= damage
         elif user_input == 'ha':
-            heavy_attack()
+            damage = heavy_attack()
+            enemy_hp -= damage
         elif user_input == 'h':
-            heal_self()
+            healing = heal_self()
+            player_hp = min(100, player_hp - healing)
         elif user_input == 'q':
             print("Quitting the battle.")
             break
         else:
             print("Invalid command. Please choose a valid option.")
+
+        if enemy_hp <= 0:
+            print("You defeated the enemy!")
+            break
+
+        if player_hp <= 0:
+            print("You were defeated by the enemy!")
+            break
 
 
 if __name__ == "__main__":
