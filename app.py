@@ -12,7 +12,8 @@ completion = openai.ChatCompletion.create(
             "role": "user",
             "content": "Write me a haiku based on mountain"
         }
-    ]
+    ],
+    temperature=0.2,    
 )
 
 print(completion.choices[0].message)
