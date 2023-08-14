@@ -14,3 +14,7 @@ Write the complete article for an audience who might be afraid of new AI technol
 --
 
 Rewrite the article, but make the Real-World Example section longer and explained in more details.
+
+--
+
+Show me a list of places in the article where images or diagrams would fit. Show me the type of image/diagrams.
