@@ -6,3 +6,7 @@ This post should aim at an audience of non-technical background.
 Before writing the post, show me the list of keywords in this post.
 
 Before answering, ask me any question that clarifies the task before answering.
+
+--
+
+Write the complete article for an audience who might be afraid of new AI technology and its implications.
