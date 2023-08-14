@@ -10,3 +10,7 @@ Before answering, ask me any question that clarifies the task before answering.
 --
 
 Write the complete article for an audience who might be afraid of new AI technology and its implications.
+
+--
+
+Rewrite the article, but make the Real-World Example section longer and explained in more details.
