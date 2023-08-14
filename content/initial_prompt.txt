@@ -22,3 +22,18 @@ Show me a list of places in the article where images or diagrams would fit. Show
 --
 
 Thumbnail illustration, a human hand reaches out to neural network, background is city, Flickering Light ar 16: 10
+
+--
+
+SEO
+
+You are an expert in SEO. 
+Show me a list of SEO improvements this article can make.
+Show me a summary of this article for SEO.
+Before answering, ask me any questions that can help you answer.
+
+Show me focus keywords and keyphrases that would improve SEO.
+
+--
+
+Add link to website for each keyword you identify. Put the URL in brackets after the keyword in the article.
