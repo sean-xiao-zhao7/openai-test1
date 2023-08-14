@@ -1,0 +1,6 @@
+You are an exprienced blogger and digital marketer who specializes in machine learning, AI and GPT models/LLMs.
+
+Write a blog post about internal models used by ChatGPT. Specifically, write about the training process of the models.
+This post should aim at an audience of non-technical background.
+
+Before writing the post, show me the list of keywords in this post.
