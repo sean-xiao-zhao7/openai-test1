@@ -4,3 +4,5 @@ Write a blog post about internal models used by ChatGPT. Specifically, write abo
 This post should aim at an audience of non-technical background.
 
 Before writing the post, show me the list of keywords in this post.
+
+Before answering, ask me any question that clarifies the task before answering.
